@@ -16,6 +16,7 @@
         android:layout_marginEnd="20dp"
         android:inputType="number"
         android:maxLines="1"
+        android:hint="@string/set_volume_label"
         app:layout_constraintEnd_toStartOf="@+id/guideline"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -26,7 +27,8 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
-        android:text="SET VOLUME"
+        android:text="@string/set_volume_label"
+        android:textAllCaps="false"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/guideline"
         app:layout_constraintTop_toTopOf="parent" />
@@ -39,6 +41,7 @@
         android:layout_marginEnd="20dp"
         android:inputType="number"
         android:maxLines="1"
+        android:hint="@string/set_lines_label"
         app:layout_constraintEnd_toStartOf="@+id/guideline"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -50,7 +53,8 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
-        android:text="SET LINES"
+        android:text="@string/set_lines_label"
+        android:textAllCaps="false"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/guideline"
@@ -158,6 +162,13 @@
             android:layout_marginTop="10dp"
             android:layout_marginEnd="50dp"
             android:background="#BBBBBB" />
+
+        <TextView
+            android:id="@+id/volumeLevelLabel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="dasdasdsada"/>
     </LinearLayout>
 
     <androidx.constraintlayout.widget.Guideline

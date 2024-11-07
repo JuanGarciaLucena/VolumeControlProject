@@ -9,6 +9,7 @@ import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.LinearLayout
+import android.widget.TextView
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import dagger.hilt.android.AndroidEntryPoint
@@ -24,6 +25,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var buttonSetVolume: Button
     private lateinit var editTextSetLines: EditText
     private lateinit var editTextSetVolume: EditText
+    private lateinit var volumeLevelLabel: TextView
     private lateinit var gestureDetector: GestureDetector
 
     private val viewModel: VolumeViewModel by viewModels()
@@ -38,6 +40,7 @@ class MainActivity : AppCompatActivity() {
         editTextSetLines = findViewById(R.id.editTextSetLines)
         editTextSetVolume = findViewById(R.id.editTextSetVolume)
         volumeControlContainer = findViewById(R.id.volumeControlContainer)
+        volumeLevelLabel = findViewById(R.id.volumeLevelLabel)
         gestureDetector = GestureDetector(this, VolumeGestureListener())
 
         volumeBars = listOf(
@@ -60,6 +63,7 @@ class MainActivity : AppCompatActivity() {
 
         viewModel.volumePercentage.observe(this) { percentage ->
             editTextSetVolume.setText(percentage.toString())
+            volumeLevelLabel.text = getString(R.string.volume_indicator_label, percentage.toString())
         }
 
 
